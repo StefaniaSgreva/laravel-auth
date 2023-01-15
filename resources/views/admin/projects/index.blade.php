@@ -2,7 +2,7 @@
 
 @section('content')
     <ul>
-        @foreach ($projets as $project)
+        @foreach ($projects as $project)
             <li>{{$project->title}}</li>
         @endforeach
     </ul>
