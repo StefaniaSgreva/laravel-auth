@@ -14,6 +14,17 @@
         <div>
             <h4>Stefania Sgreva</h4>
             <small>Super admin</small>
+            <span class="logout">
+                <a class="ms-3" href="{{route('logout')}}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();" title="Logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Logout
+                </a>
+                <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </span>
+            
         </div>
     </div>
 </header>

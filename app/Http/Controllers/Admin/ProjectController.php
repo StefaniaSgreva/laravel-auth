@@ -40,8 +40,8 @@ class ProjectController extends Controller
         $data['slug'] = $slug;
 
         if ($request->hasFile('cover_image')) {
-            $path = Storage::disk('public')->put('uploads', $request->cover_image);
-            // $path = Storage::put('uploads', $request->cover_image);
+            // $path = Storage::disk('public')->put('uploads', $request->cover_image);
+            $path = Storage::put('uploads', $request->cover_image);
             $data['cover_image'] = $path;
         }
 
@@ -90,8 +90,8 @@ class ProjectController extends Controller
                 Storage::delete($project->cover_image);
             }
 
-            $path = Storage::disk('public')->put('uploads', $request->cover_image);
-            // $path = Storage::put('uploads', $request->cover_image);
+            // $path = Storage::disk('public')->put('uploads', $request->cover_image);
+            $path = Storage::put('uploads', $request->cover_image);
             $data['cover_image'] = $path;
         }
 

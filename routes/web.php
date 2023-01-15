@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,7 @@ Route::middleware(['auth', 'verified'])
         Route::get('/', [DashboardController::class, 'index'])
             ->name('dashboard');
         Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']); //lui si aspetta un id, noi diciamo che è lo slug
+        Route::resource('categories', CategoryController::class)->parameters(['categories' => 'category:slug']); //in questo caso potremo fare a meno dello slug
     });
 
 // Route::middleware('auth')->group = per proteggere una serie di rotte e raggrupparle da un sistema di autenticazione
