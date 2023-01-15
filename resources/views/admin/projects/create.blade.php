@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.aadmin')
 
 @section('content')
     <h1>Create Project</h1>

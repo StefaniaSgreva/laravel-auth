@@ -13,7 +13,19 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    {{-- Nunito  --}}
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- Kalam - handwriting - font-family: 'Kalam', cursive;--}}
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    {{-- Poppins   font-family: 'Poppins', sans-serif;--}}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    {{-- Gloria Hallelujah font-family: 'Gloria Hallelujah', cursive; --}}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    {{-- Fuzzy Bubbles  font-family: 'Fuzzy Bubbles', cursive;--}}
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap" rel="stylesheet">
+
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
@@ -52,11 +64,11 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @guest
+                        @guest <!-- Se l'utente NON è registrato -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
-                        @if (Route::has('register'))
+                        @if (Route::has('register'))<!-- Se l'utente E' registrato -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
@@ -65,7 +77,7 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{-- recupera l'utente autenticato --}}
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->name }}<!-- Se l'utente E' registrato -->
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
