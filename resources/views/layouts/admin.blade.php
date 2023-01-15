@@ -32,18 +32,17 @@
     </head>
 
     <body>
-        <div id="admin">
+        <div id="admin">     
+
             @include('partials.admin.sidebar')
-
-            <div class="wrapper">
+            <div class="main-content">
                 @include('partials.admin.header')
-
                 <main>
                     @yield('content')
                 </main>
-
-                {{-- @include('partials.admin.footer') --}}
             </div>
+
+            {{-- @include('partials.admin.footer') --}}
         </div>
     </body>
 
