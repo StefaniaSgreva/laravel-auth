@@ -18,13 +18,13 @@
                     <textarea class="form-control" id="content" name="content"></textarea>
                     </div>
 
-                    {{-- <div class="mb-3">
+                    <div class="mb-3">
                         <label for="cover_image" class="form-label">Immagine</label>
                         <input type="file" name="cover_image" id="cover_image" class="form-control  @error('cover_image') is-invalid @enderror" >
                         @error('cover_image')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
-                    </div> --}}
+                    </div>
 
                     {{-- <label for="category_id" class="form-label">Seleziona Categoria</label>
                 <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror">

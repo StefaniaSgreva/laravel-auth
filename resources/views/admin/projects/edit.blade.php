@@ -20,8 +20,8 @@
                     <textarea rows="10" class="form-control" id="content" name="content">{{old('content', $project->content)}}</textarea>
                 </div>
 
-                {{-- <div class="d-flex">
-                    <div class="media me-4">
+                <div class="d-flex">
+                    <div class="mb-3 me-5">
                         <img class="shadow" width="150" src="{{asset('storage/' . $project->cover_image)}}" alt="{{$project->title}}">
                     </div>
                     <div class="mb-3">
@@ -31,7 +31,7 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-                </div> --}}
+                </div>
 
                 {{-- <label for="category_id" class="form-label">Seleziona Categoria</label>
                 <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror">
