@@ -46,6 +46,15 @@ body{
     padding: .5rem 1rem;
     border: 1px solid $light-blue;
 }
+.submit{
+    background-color: $pink;
+    border: 1px solid $pink;
+    margin-right: .5rem;
+}
+.reset{
+    background-color: $dark-blue;
+    border: 1px solid $dark-blue;
+}
 /*********************
      SIDEBAR
 *********************/
@@ -226,8 +235,10 @@ table{
     border-collapse: collapse;
 }
 thead tr th{
-    border-top: 1px solid $light-borders;
-    border-bottom: 2px solid $light-borders;
+    border-top: 2px solid $light-blue;
+    border-bottom: 2px solid $light-blue;
+    background-color: $pink;
+    color: $white;
 }
 thead th{
     font-weight: 700;
@@ -236,6 +247,7 @@ thead th{
 }
 td{
     padding: .5rem .5rem;
+    border-bottom: 1px solid $light-borders;
     font-size: .9rem;
     color: $text-dark;
 }

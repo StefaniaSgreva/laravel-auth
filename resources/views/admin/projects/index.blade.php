@@ -33,6 +33,7 @@
     </div>
     {{-- CREATE BTN --}}
     <a class="my-btn" href="{{route('admin.projects.create')}}">Add new</a>
+    {{-- MESSAGE DELETE EDIT --}}
     @if(session()->has('message'))
     <div class="alert alert-success mb-3 mt-3">
         {{ session()->get('message') }}

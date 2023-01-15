@@ -8,7 +8,7 @@
     <div class="sidebar-menu">
         <ul>
             <li>
-                <a href="" class="active">
+                <a href="{{route('admin.dashboard')}}" class="active">
                     <i class="fa-solid fa-gauge-high"></i>
                     <span>Dashboard</span>
                 </a>
@@ -20,7 +20,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{route('admin.projects.index')}}">
                     <i class="fa-solid fa-folder-open"></i>
                     <span>Projects</span>
                 

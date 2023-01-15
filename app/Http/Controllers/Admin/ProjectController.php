@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 
 class ProjectController extends Controller
@@ -30,9 +31,17 @@ class ProjectController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-        //
+        // $data = $request->all();
+        $data = $request->validated();
+        $slug = Project::generateSlug($request->title);
+        $data['slug'] = $slug;
+
+        $new_project = Project::create($data);
+
+        return redirect()->route('admin.projects.show', $new_project->slug);
+
     }
 
     /**
@@ -40,9 +49,9 @@ class ProjectController extends Controller
      *
      * @param  int  $id
      */
-    public function show($id)
+    public function show(Project $project)
     {
-        return view('admin.projects.show');
+        return view('admin.projects.show', compact('project'));
 
     }
 
@@ -51,9 +60,9 @@ class ProjectController extends Controller
      *
      * @param  int  $id
      */
-    public function edit($id)
+    public function edit(Project $project)
     {
-        return view('admin.projects.edit');
+        return view('admin.projects.edit', compact('project'));
 
     }
 
@@ -63,9 +72,15 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      */
-    public function update(Request $request, $id)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $data = $request->validated();
+        $slug = Project::generateSlug($request->title);
+        $data['slug'] = $slug;
+
+        $project->update($data);
+        return redirect()->route('admin.projects.index')->with('message', "$project->title updated successfully");
+
     }
 
     /**
@@ -73,8 +88,14 @@ class ProjectController extends Controller
      *
      * @param  int  $id
      */
-    public function destroy($id)
+    public function destroy(Project $project)
     {
-        //
+        // if ($project->cover_image) {
+        //     Storage::delete($project->cover_image);
+        // }
+
+        $deleted = $project->title;
+        $project->delete();
+        return redirect()->route('admin.projects.index')->with('message', "$deleted deleted successfully");
     }
 }
