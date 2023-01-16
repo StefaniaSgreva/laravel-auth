@@ -10,9 +10,9 @@
 
     <img src="{{ asset('storage/' . $project->cover_image) }}" alt="{{$project->title}}">
 
-    {{-- @if ($project->technologies && count($project->technologies) > 0 ? count($project->technologies) : 0)
-        @foreach ($project->technologies as $technology)
-        <span>{{$technology->name}}</span>
+    @if ($project->tags && count($project->tags) > 0 ? count($project->tags) : 0)
+        @foreach ($project->tags as $tag)
+        <span>{{$tag->name}}</span>
         @endforeach
-    @endif --}}
+    @endif
 @endsection

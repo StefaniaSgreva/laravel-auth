@@ -33,34 +33,36 @@
                     </div>
                 </div>
 
-                {{-- <label for="category_id" class="form-label">Seleziona Categoria</label>
-                <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror">
-                <option value="">Select category</option>
-                @foreach ($categories as $category)
-                <option value="{{$category->id}}" {{$category->id == old ('category_id') ? 'selected' : ''}}>{{$category->name}}</option>
-                @endforeach
-                </select>
-                @error('category_id')
-                <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-                </div> --}}
-
-                {{-- </div>
                 <div class="mb-3">
-                <label for="tags" class="form-label">Tags</label>
-                <select multiple class="form-select" name="technologies[]" id="technologies">
-                    <option value="">Seleziona tag</option>
-                    @forelse ($technologies as $technology)
-                    @if($errors->any())
-                    <option value="{{$technology->id}}" {{in_array($technology->id , old('technologies[]')) ? 'selected': ''}}>{{$technology->name}}</option>
-                    @else
-                    <option value="{{$technology->id}}" {{$project->technologies->contains($technology->id) ? 'selected': ''}}>{{$technology->name}}</option>
-                    @endif
-                    @empty
-                        <option value="">No tag</option>
-                    @endforelse
-                </select>
-                </div> --}}
+                    <label for="category_id" class="form-label">Seleziona Categoria</label>
+                    <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror">
+                    <option value="">Select category</option>
+                    @foreach ($categories as $category)
+                    <option value="{{$category->id}}" {{$category->id == old ('category_id') ? 'selected' : ''}}>{{$category->name}}</option>
+                    @endforeach
+                    </select>
+                    @error('category_id')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                    </div>
+                </div>
+            
+                <div class="mb-3">
+                    @foreach ($tags as $tag)
+                    <div class="form-check form-check-inline">
+
+                        @if (old("tags"))
+                            <input type="checkbox" class="form-check-input" id="{{$tag->slug}}" name="tags[]" value="{{$tag->id}}" {{in_array( $tag->id, old("tags", []) ) ? 'checked' : ''}}>
+                        @else
+                            {{-- <input type="checkbox" class="form-check-input" id="{{$tag->slug}}" name="tags[]" value="{{$tag->id}}" {{$project->tags->contains($tag) ? 'checked' : ''}}> --}}
+                        @endif
+                        <label class="form-check-label" for="{{$tag->slug}}">{{$tag->name}}</label>
+                    </div>
+                @endforeach
+                @error('tags')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                  </div>
 
                 <button type="submit" class="my-btn submit">Submit</button>
                 <button type="reset" class="my-btn reset">Reset</button>

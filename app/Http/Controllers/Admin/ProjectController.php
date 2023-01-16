@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
@@ -26,7 +27,8 @@ class ProjectController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.projects.create', compact('categories'));
+        $tags = Tag::all();
+        return view('admin.projects.create', compact('categories', 'tags'));
         // return view('admin.projects.create');
     }
 
@@ -49,6 +51,10 @@ class ProjectController extends Controller
         }
 
         $new_project = Project::create($data);
+
+        if ($request->has('tags')) {
+            $new_project->tags()->attach($request->tags);
+        }
 
         return redirect()->route('admin.projects.show', $new_project->slug);
 
@@ -73,7 +79,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $categories = Category::all();
-        return view('admin.projects.edit', compact('project', 'categories'));
+        $tags = Tag::all();
+        return view('admin.projects.edit', compact('project', 'categories', 'tags'));
         // return view('admin.projects.edit', compact('project'));
 
     }
@@ -101,6 +108,14 @@ class ProjectController extends Controller
         }
 
         $project->update($data);
+
+
+        if ($request->has('tags')) {
+            $project->tags()->sync($request->tags);
+        } else {
+            $project->tags()->sync([]);
+        }
+
         return redirect()->route('admin.projects.index')->with('message', "$project->title updated successfully");
 
     }

@@ -20,7 +20,7 @@
                     <table width="100%">
                         <thead>
                             <tr>
-                                {{-- <th scope="col">#</th> --}}
+                                <th scope="col">#</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Projects</th>
                                 <th scope="col">Edit</th>
@@ -30,11 +30,11 @@
                         <tbody>
                             @foreach($categories as $category)
                                     <tr>
-                                        {{-- <th scope="row">{{$category->id}}</th> --}}
+                                        <th scope="row" class="ps-2">{{$category->id}}</th>
                                         <td><a href="{{route('admin.categories.show', $category->slug)}}" title="View Category">{{$category->name}}</a></td>
-                                        <td>{{count($category->projects)}}</td>
-                                        <td><a href="{{route('admin.categories.edit', $category->slug)}}" title="Edit Category"><i class="fa-solid fa-file-pen"></i></a></td>
-                                        <td>
+                                        <td class="ps-4">{{count($category->projects)}}</td>
+                                        <td class="ps-4"><a href="{{route('admin.categories.edit', $category->slug)}}" title="Edit Category"><i class="fa-solid fa-file-pen"></i></a></td>
+                                        <td class="ps-2">
                                             <form action="{{route('admin.categories.destroy', $category->slug)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
@@ -47,12 +47,6 @@
                     </table>
                 </div>
             </div>
-        </div>
-        <div class="categories">
-
-        </div>
-        <div class="tags">
-
         </div>
     </div>
     @include('partials.admin.modal_delete')

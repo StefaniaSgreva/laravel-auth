@@ -51,7 +51,7 @@
                     <table width="100%">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col"></th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Content</th>
                                 <th scope="col">Category</th>
@@ -63,14 +63,14 @@
                         <tbody>
                             @foreach($projects as $project)
                                     <tr>
-                                        <th scope="row">{{$project->id}}</th>
+                                        <th scope="row" class="ps-2">{{$project->id}}</th>
                                         <td><a href="{{route('admin.projects.show', $project->slug)}}" title="View Project">{{$project->title}}</a></td>
                                         {{-- <td>{{Str::limit($project->content,80)}}</td> --}}
                                         <td>{!! Str::limit($project->content,80) !!}</td>
-                                        <td>{{$project->category ? $project->category->name : 'Altro'}}</td>
-                                        <td>{{$project->tags && count($project->tags) > 0 ? count($project->tags) : 0}}</td>
-                                        <td><a href="{{route('admin.projects.edit', $project->slug)}}" title="Edit Project"><i class="fa-solid fa-file-pen"></i></a></td>
-                                        <td>
+                                        <td class="ps-3">{{$project->category ? $project->category->name : 'Altro'}}</td>
+                                        <td class="ps-3">{{$project->tags && count($project->tags) > 0 ? count($project->tags) : 0}}</td>
+                                        <td class="ps-2"><a href="{{route('admin.projects.edit', $project->slug)}}" title="Edit Project"><i class="fa-solid fa-file-pen"></i></a></td>
+                                        <td class="ps-2">
                                             <form action="{{route('admin.projects.destroy', $project->slug)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
