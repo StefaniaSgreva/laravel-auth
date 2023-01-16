@@ -16,15 +16,6 @@ class Project extends Model
     {
         return Str::slug($title, '-');
     }
-    /**
-     * Get all of the posts for the User
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    // public function projects(): BelongsTo
-// {
-//     return $this->belongsTo(User::class);
-// }
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);

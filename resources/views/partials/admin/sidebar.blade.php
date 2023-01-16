@@ -8,20 +8,20 @@
     <div class="sidebar-menu">
         <ul>
             <li>
-                <a href="{{route('admin.dashboard')}}" class="active">
+                <a class="{{Route::currentRouteName() == 'admin.dashboard' ? 'active' : ''}}" href="{{route('admin.dashboard')}}">
                     <i class="fa-solid fa-gauge-high"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="{{route('admin.projects.index')}}">
+                <a class="{{Route::currentRouteName() == 'admin.projects.index' ? 'active' : ''}}" href="{{route('admin.projects.index')}}">
                     <i class="fa-solid fa-folder-open"></i>
                     <span>Projects</span>
                 
                 </a>
             </li>
             <li>
-                <a href="">
+                <a class="{{Route::currentRouteName() == 'admin.categories.index' ? 'active' : ''}}" href="{{route('admin.categories.index')}}">
                     <i class="fa-solid fa-rectangle-list"></i>
                     <span>Categories</span>
                 </a>

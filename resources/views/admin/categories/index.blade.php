@@ -1,80 +1,44 @@
 @extends('layouts.admin')
 
 @section('content')
-   {{-- DASHBOARD CARDS TOP  --}}
-    <div class="dashboard-cards">
-        <div class="dashboard-card-single">
-            <div>
-                <h2>70</h2>
-                <span>Projects</span>
-            </div>
-            <div>
-                <i class="fa-solid fa-folder-open"></i>
-            </div>
-        </div>
-        <div class="dashboard-card-single">
-            <div>
-                <h2>10</h2>
-                <span>Categories</span>
-            </div>
-            <div>
-                <i class="fa-solid fa-rectangle-list"></i>
-            </div>
-        </div>
-        <div class="dashboard-card-single">
-            <div>
-                <h2>20</h2>
-                <span>Tags</span>
-            </div>
-            <div>
-                <i class="fa-solid fa-tags"></i>
-            </div>
-        </div>
-    </div>
     {{-- CREATE BTN --}}
-    <a class="my-btn" href="{{route('admin.projects.create')}}">Add new</a>
+    <a class="my-btn" href="{{route('admin.categories.create')}}">Add new</a>
     {{-- MESSAGE DELETE EDIT --}}
     @if(session()->has('message'))
     <div class="alert alert-success mb-3 mt-3">
         {{ session()->get('message') }}
     </div>
     @endif
-    {{-- RECENT PROJECTS  --}}
+    {{-- CATEGORIES  --}}
     <div class="recent-grid">
         <div class="projects">
             <div class="project-card">
                 <div class="project-card-header">
-                    <h3>Recent Projects</h3>
-                    <button>See all <i class="fa-solid fa-angles-right"></i></button>
+                    <h3>Categories</h3>
                 </div>
                 <div class="project-card-body">
                     <table width="100%">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Content</th>
-                                <th scope="col">Category</th>
-                                <th scope="col">Tags</th>
+                                {{-- <th scope="col">#</th> --}}
+                                <th scope="col">Name</th>
+                                <th scope="col">Projects</th>
                                 <th scope="col">Edit</th>
                                 <th scope="col">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($projects as $project)
+                            @foreach($categories as $category)
                                     <tr>
-                                        <th scope="row">{{$project->id}}</th>
-                                        <td><a href="{{route('admin.projects.show', $project->slug)}}" title="View Project">{{$project->title}}</a></td>
-                                        <td>{{Str::limit($project->content,80)}}</td>
-                                        {{-- <td>{!! $project->content !!}</td> --}}
-                                        <td>{{$project->category ? $project->category->name : 'Altro'}}</td>
-                                        <td>{{$project->tags && count($project->tags) > 0 ? count($project->tags) : 0}}</td>
-                                        <td><a href="{{route('admin.projects.edit', $project->slug)}}" title="Edit Project"><i class="fa-solid fa-file-pen"></i></a></td>
+                                        {{-- <th scope="row">{{$category->id}}</th> --}}
+                                        <td><a href="{{route('admin.categories.show', $category->slug)}}" title="View Category">{{$category->name}}</a></td>
+                                        <td>{{count($category->projects)}}</td>
+                                        <td><a href="{{route('admin.categories.edit', $category->slug)}}" title="Edit Category"><i class="fa-solid fa-file-pen"></i></a></td>
                                         <td>
-                                            <form action="{{route('admin.projects.destroy', $project->slug)}}" method="POST">
+                                            <form action="{{route('admin.categories.destroy', $category->slug)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="delete-button btn" data-item-title="{{$project->title}}"><i class="fa-solid fa-trash-can"></i></button>
+                                            <button type="submit" class="delete-button btn" data-item-title="{{$category->name}}}"><i class="fa-solid fa-trash-can"></i></button>
                                          </form>
                                         </td>
                                     </tr>
