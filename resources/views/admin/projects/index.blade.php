@@ -65,8 +65,8 @@
                                     <tr>
                                         <th scope="row">{{$project->id}}</th>
                                         <td><a href="{{route('admin.projects.show', $project->slug)}}" title="View Project">{{$project->title}}</a></td>
-                                        <td>{{Str::limit($project->content,80)}}</td>
-                                        {{-- <td>{!! $project->content !!}</td> --}}
+                                        {{-- <td>{{Str::limit($project->content,80)}}</td> --}}
+                                        <td>{!! Str::limit($project->content,80) !!}</td>
                                         <td>{{$project->category ? $project->category->name : 'Altro'}}</td>
                                         <td>{{$project->tags && count($project->tags) > 0 ? count($project->tags) : 0}}</td>
                                         <td><a href="{{route('admin.projects.edit', $project->slug)}}" title="Edit Project"><i class="fa-solid fa-file-pen"></i></a></td>

@@ -2,9 +2,9 @@
 
 @section('content')
     <h1>{{$project->title}}</h1>
-    {{-- @if($project->category)
+    @if($project->category)
     <small>Category:{{$project->category->name}}</small>
-    @endif --}}
+    @endif
     {{-- !! e una sola graffa, per evitare che il plug in delle text area stampi l'html --}}
     <p>{!! $project->content !!}</p> 
 
