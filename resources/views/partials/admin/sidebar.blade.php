@@ -2,7 +2,7 @@
 <nav class="sidebar">
     {{-- SIDEBAR HEADER --}}
     <div class="sidebar-brand">
-        <h2><i class="fa-solid fa-code"></i><span>Boolfix</span></h2>
+        <h2><i class="fa-solid fa-code"></i><span>BoolPress</span></h2>
     </div>
     {{-- SIDEBAR MENU --}}
     <div class="sidebar-menu">
@@ -11,12 +11,6 @@
                 <a href="{{route('admin.dashboard')}}" class="active">
                     <i class="fa-solid fa-gauge-high"></i>
                     <span>Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa-solid fa-user-gear"></i>
-                    <span>User</span>
                 </a>
             </li>
             <li>
@@ -36,6 +30,12 @@
                 <a href="">
                     <i class="fa-solid fa-tags"></i>
                     <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <span>User</span>
                 </a>
             </li>
         </ul>

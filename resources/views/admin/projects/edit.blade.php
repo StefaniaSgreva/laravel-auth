@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h2 class="mb-4 mt-4">Edit Project: {{$project->title}}</h2>
-    <div class="row bg-white">
+    <h2 class="mt-4 mb-4 ms-5 tabs-title">Edit Project: <span class="tabs-infos">{{$project->title}}</span></h2>
+    <div class="row bg-white mx-5">
         <div class="col-12">
             <form action="{{route('admin.projects.update', $project->slug)}}" method="POST" enctype="multipart/form-data" class="p-4">
                 @csrf

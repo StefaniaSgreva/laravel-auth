@@ -55,6 +55,16 @@ body{
     background-color: $dark-blue;
     border: 1px solid $dark-blue;
 }
+.tabs-title{
+    text-transform: uppercase;
+    color: $mustard-yellow;
+    font-weight: 600;
+}
+.tabs-infos{
+    text-transform: none;
+    color: $light-blue;
+    font-weight: 500;
+}
 /*********************
      SIDEBAR
 *********************/
@@ -108,6 +118,8 @@ body{
 .main-content{
     // transition: margin-left 300ms;
     margin-left: 345px;
+    // margin-left: 360px;
+    // padding-right: 20px;
 }
 /*********************
      HEADER

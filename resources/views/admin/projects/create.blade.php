@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h2 class="mb-4 mt-4">Create Project</h2>
-    <div class="row bg-white">
+    <h2 class="mt-4 mb-4 ms-5 tabs-title">Create New Project</h2>
+    <div class="row bg-white mx-5">
         <div class="col-12">
             <form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data" class="p-4">
                 @csrf
                     <div class="mb-3">
-                    <label for="title" class="form-label">Titolo</label>
+                    <label for="title" class="form-label">Title</label>
                     <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title">
                     @error('title')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="cover_image" class="form-label">Immagine</label>
+                        <label for="cover_image" class="form-label">Image</label>
                         <input type="file" name="cover_image" id="cover_image" class="form-control  @error('cover_image') is-invalid @enderror" >
                         @error('cover_image')
                         <div class="invalid-feedback">{{ $message }}</div>
