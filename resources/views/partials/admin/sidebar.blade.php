@@ -27,7 +27,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a class="{{Route::currentRouteName() == 'admin.tags.index' ? 'active' : ''}}" href="{{route('admin.tags.index')}}">
                     <i class="fa-solid fa-tags"></i>
                     <span>Tags</span>
                 </a>
