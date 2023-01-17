@@ -12,7 +12,9 @@ class Tag extends Model
 {
     use HasFactory;
 
-    protected $guarder = [];
+    // protected $guarder = [];
+    protected $fillable = ['name', 'slug'];
+
 
     public static function generateSlug($name)
     {

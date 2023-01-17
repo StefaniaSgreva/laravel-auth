@@ -54,7 +54,7 @@
                         @if (old("tags"))
                             <input type="checkbox" class="form-check-input" id="{{$tag->slug}}" name="tags[]" value="{{$tag->id}}" {{in_array( $tag->id, old("tags", []) ) ? 'checked' : ''}}>
                         @else
-                            {{-- <input type="checkbox" class="form-check-input" id="{{$tag->slug}}" name="tags[]" value="{{$tag->id}}" {{$project->tags->contains($tag) ? 'checked' : ''}}> --}}
+                            <input type="checkbox" class="form-check-input" id="{{$tag->slug}}" name="tags[]" value="{{$tag->id}}" {{$project->tags->contains($tag) ? 'checked' : ''}}>
                         @endif
                         <label class="form-check-label" for="{{$tag->slug}}">{{$tag->name}}</label>
                     </div>
