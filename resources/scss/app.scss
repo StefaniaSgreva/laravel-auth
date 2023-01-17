@@ -45,6 +45,7 @@ body{
     font-family: inherit;
     padding: .5rem 1rem;
     border: 1px solid $light-blue;
+    width: fit-content;
 }
 .submit{
     background-color: $pink;
@@ -277,4 +278,28 @@ td a:hover{
     font-size: 1.1rem;
     color: $pink;
 
+}
+.show-title{
+    color: $pink; 
+}
+.show-category{
+    color: $text-gray;
+    font-size: 1rem;
+
+    span{
+        color: $light-blue;
+        margin-left: .5rem;
+        font-size: 1.2rem;
+    }
+}
+.show-content{
+    // max-width: 500px;
+    margin: 20px 0;
+}
+.show-img{
+    width: 150px;
+    height: 150px;
+}
+.show-tags{
+    color: $mustard-yellow;
 }

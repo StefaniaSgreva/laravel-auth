@@ -2,7 +2,7 @@
 
 @section('content')
     <h2 class="mt-4 mb-4 ms-5 tabs-title">Edit Project: <span class="tabs-infos">{{$project->title}}</span></h2>
-    <div class="row bg-white mx-5">
+    <div class="row bg-white mx-5 pb-4">
         <div class="col-12">
             <form action="{{route('admin.projects.update', $project->slug)}}" method="POST" enctype="multipart/form-data" class="p-4">
                 @csrf
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             
-                <div class="mb-3">
+                <div class="mb-5 ms-4">
                     @foreach ($tags as $tag)
                     <div class="form-check form-check-inline">
 
@@ -57,14 +57,14 @@
                             <input type="checkbox" class="form-check-input" id="{{$tag->slug}}" name="tags[]" value="{{$tag->id}}" {{$project->tags->contains($tag) ? 'checked' : ''}}>
                         @endif
                         <label class="form-check-label" for="{{$tag->slug}}">{{$tag->name}}</label>
-                    </div>
-                @endforeach
-                @error('tags')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-                  </div>
+                        </div>
+                    @endforeach
+                    @error('tags')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
 
-                <button type="submit" class="my-btn submit">Submit</button>
+                <button type="submit" class="my-btn submit ms-5">Submit</button>
                 <button type="reset" class="my-btn reset">Reset</button>
             </form>
         </div>

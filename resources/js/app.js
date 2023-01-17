@@ -30,6 +30,8 @@ deleteSubmitButtons.forEach((button) => {
         })
     })
 });
+// preview immagine in create project
+
 const previewImage = document.getElementById('create_cover_image');
 previewImage.addEventListener('change', (event) =>{
     var oFReader = new FileReader();
