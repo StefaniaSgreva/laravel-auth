@@ -1,4 +1,4 @@
-{{-- <input type="checkbox" id="nav-toggle"> --}}
+<input type="checkbox" id="nav-toggle">
 <nav class="sidebar">
     {{-- SIDEBAR HEADER --}}
     <div class="sidebar-brand">

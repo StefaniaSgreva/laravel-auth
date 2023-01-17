@@ -1,6 +1,6 @@
 <header>
     <h2>
-        <label for="">
+        <label for="nav-toggle">
             <i class="fa-solid fa-bars"></i>
         </label>
         Dashboard

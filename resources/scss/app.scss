@@ -94,7 +94,7 @@ body{
 .sidebar-menu li{
     width: 100%;
     margin-bottom: 1.7rem;
-    padding-left: 1rem;
+    // padding-left: 1rem;
 }
 .sidebar-menu a{
     padding-left: 1rem;
@@ -302,4 +302,30 @@ td a:hover{
 }
 .show-tags{
     color: $mustard-yellow;
+}
+
+#nav-toggle{
+    display: none;
+}
+
+#nav-toggle:checked + .sidebar{
+    width: 80px;
+}
+#nav-toggle:checked + .sidebar .sidebar-brand {
+    padding-left: 1rem;
+    text-align: center;
+}
+#nav-toggle:checked + .sidebar li a{
+    padding-left: 0rem;
+}
+#nav-toggle:checked + .sidebar .sidebar-brand h2 span:last-child,
+#nav-toggle:checked + .sidebar li a span:last-child{
+    display: none;
+}
+#nav-toggle:checked ~ .main-content{
+    margin-left: 80px;
+}
+#nav-toggle:checked ~ .main-content header{
+    width: calc(100% - 80px);
+    left: 80px;
 }

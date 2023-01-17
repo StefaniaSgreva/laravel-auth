@@ -14,7 +14,7 @@
         </div>
         <div class="dashboard-card-single">
             <div>
-                <h2>10</h2>
+                <h2>20</h2>
                 <span>Categories</span>
             </div>
             <div>
@@ -45,7 +45,7 @@
             <div class="project-card">
                 <div class="project-card-header">
                     <h3>Recent Projects</h3>
-                    <button>See all <i class="fa-solid fa-angles-right"></i></button>
+                    {{-- <button>See all <i class="fa-solid fa-angles-right"></i></button> --}}
                 </div>
                 <div class="project-card-body">
                     <table width="100%">
