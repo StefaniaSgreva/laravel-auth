@@ -2,7 +2,7 @@
 <nav class="sidebar">
     {{-- SIDEBAR HEADER --}}
     <div class="sidebar-brand">
-        <h2><i class="fa-solid fa-code"></i><span>BoolPress</span></h2>
+        <h2><i class="fa-solid fa-code"></i><span>Boolfolio</span></h2>
     </div>
     {{-- SIDEBAR MENU --}}
     <div class="sidebar-menu">
@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li>
-                <a class="{{Route::currentRouteName() == 'admin.categories.index' ? 'active' : ''}}" href="{{route('admin.categories.index')}}">
+                <a class="{{Route::currentRouteName() == 'admin.categories.index'  ? 'active' : ''}}" href="{{route('admin.categories.index')}}">
                     <i class="fa-solid fa-rectangle-list"></i>
                     <span>Categories</span>
                 </a>

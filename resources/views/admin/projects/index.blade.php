@@ -40,7 +40,7 @@
     </div>
     @endif
     {{-- RECENT PROJECTS  --}}
-    <div class="recent-grid">
+    <div class="recent-grid mb-4">
         <div class="projects">
             <div class="project-card">
                 <div class="project-card-header">
@@ -84,12 +84,9 @@
                 </div>
             </div>
         </div>
-        <div class="categories">
-
-        </div>
-        <div class="tags">
-
-        </div>
     </div>
+    {{-- php artisan vendor:publish --tag=laravel-errors
+        php artisan vendor:publish --tag=laravel-pagination --}}
+    {{$projects->links('vendor.pagination.bootstrap-5')}}
     @include('partials.admin.modal_delete')
 @endsection
