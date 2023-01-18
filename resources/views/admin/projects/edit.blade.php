@@ -22,7 +22,8 @@
 
                 <div class="d-flex">
                     <div class="mb-3 me-5">
-                        <img class="shadow" width="150" src="{{asset('storage/' . $project->cover_image)}}" alt="{{$project->title}}">
+                        {{-- <img class="shadow" width="150" src="{{asset('storage/' . $project->cover_image)}}" alt="{{$project->title}}"> --}}
+                        <img class="shadow" width="150" src="{{ asset('storage/' . $project->cover_image) }}" alt="{{$project->title}}">
                     </div>
                     <div class="mb-3">
                         <label for="cover_image" class="form-label">Replace post image</label>

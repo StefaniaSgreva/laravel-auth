@@ -16,7 +16,7 @@ class ProjectController extends Controller
         $projects = Project::with('category', 'tags')->paginate(5); //di solito non si fa così per tutti -> si fa per il singolo projects, non si scaricano i dettagli per tutti i project in all
         return response()->json([
             'success' => true,
-            'result' => $projects //sto passando solo i project e non category e tag -solo category id-
+            'results' => $projects //sto passando solo i project e non category e tag -solo category id-
         ]);
     }
     public function show($slug)
@@ -25,12 +25,12 @@ class ProjectController extends Controller
         if ($project) {
             return response()->json([
                 'success' => true,
-                'result' => $project
+                'results' => $project
             ]);
         } else {
             return response()->json([
                 'success' => false,
-                'result' => 'No Project found'
+                'results' => 'No Project found'
             ]);
         }
     }

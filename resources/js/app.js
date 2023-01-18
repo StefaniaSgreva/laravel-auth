@@ -32,15 +32,15 @@ deleteSubmitButtons.forEach((button) => {
 });
 // preview immagine in create project
 
-const previewImage = document.getElementById('create_cover_image');
-previewImage.addEventListener('change', (event) =>{
-    var oFReader = new FileReader();
-    // var image  =  previewImage.files[0];
-    // console.log(image);
-    oFReader.readAsDataURL(previewImage.files[0]);
+// const previewImage = document.getElementById('create_cover_image');
+// previewImage.addEventListener('change', (event) =>{
+//     var oFReader = new FileReader();
+//     // var image  =  previewImage.files[0];
+//     // console.log(image);
+//     oFReader.readAsDataURL(previewImage.files[0]);
 
-    oFReader.onload = function (oFREvent) {
-        //console.log(oFREvent);
-        document.getElementById("uploadPreview").src = oFREvent.target.result;
-    };
-});
+//     oFReader.onload = function (oFREvent) {
+//         //console.log(oFREvent);
+//         document.getElementById("uploadPreview").src = oFREvent.target.result;
+//     };
+// });

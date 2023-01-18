@@ -19,14 +19,23 @@
                 <textarea rows="10" class="form-control" id="content" name="content"></textarea>
                 </div>
 
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <img id="uploadPreview" width="100" class="mb-3" src="https://via.placeholder.com/300x200">
                     <label for="create_cover_image" class="form-label">Image</label>
                     <input type="file" name="cover_image" id="create_cover_image" class="form-control  @error('cover_image') is-invalid @enderror" >
                     @error('cover_image')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
-                </div>
+                </div> --}}
+                
+                <div class="mb-3">
+                    <label for="cover_image" class="form-label">Image</label>
+                    <input type="file" name="cover_image" id="cover_image" class="form-control  @error('cover_image') is-invalid @enderror" >
+                    @error('cover_image')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                 </div>
+
                 <div class="mb-3">
                     <label for="category_id" class="form-label">Select Category</label>
                     <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror">
