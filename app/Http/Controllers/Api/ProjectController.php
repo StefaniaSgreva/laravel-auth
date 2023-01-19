@@ -13,7 +13,7 @@ class ProjectController extends Controller
         // $projects = Project::all();
         // $projects = Project::paginate(5);
         // $projects = Project::with('category', 'tags')->get(); //li prende tutti se non lo voglio paginato
-        $projects = Project::with('category', 'tags')->paginate(5); //di solito non si fa così per tutti -> si fa per il singolo projects, non si scaricano i dettagli per tutti i project in all
+        $projects = Project::with('category', 'tags')->paginate(3); //di solito non si fa così per tutti -> si fa per il singolo projects, non si scaricano i dettagli per tutti i project in all
         return response()->json([
             'success' => true,
             'results' => $projects //sto passando solo i project e non category e tag -solo category id-
